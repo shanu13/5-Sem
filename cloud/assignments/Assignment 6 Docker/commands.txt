@@ -1,0 +1,15 @@
+docker pull python:3.8-slim
+docker images
+docker run -dit --name=pyContainer python:3.8-slim
+docker container ls
+dockerexec-it pyContainer /bin/bash
+python -c"print('hello world')"
+python --version
+ls
+exit
+docker container stop pyContainer
+docker container rm pyContainer
+mkdir testfolder
+docker run -dit --name=pyC -v /home/ec2-user/testfolder:/myfolder python:3.8-slim
+dockerexec-it pyC /bin/bash
+python cloud.py
